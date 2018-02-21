@@ -1,0 +1,14 @@
+﻿<Properties StartupConfiguration="{0A9C9D8B-839F-4967-9405-F4A3F3BB07AB}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WinForm01/Form1.cs">
+    <Files>
+      <File FileName="WinForm01/Program.cs" Line="1" Column="1" />
+      <File FileName="WinForm01/Form1.cs" Line="33" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

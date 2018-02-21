@@ -71,7 +71,7 @@ namespace WinForm01
                 Double.TryParse(ValueInput(aButton), out yValue); // retrieves equasion's 2nd value
             }
             ResultFieldFocus();
-            resultField.SelectionStart = resultField.Text.Length; // puts a cursor in the end of contained value
+            resultField.SelectionStart = resultField.Text.Length; // puts a cursor in the end of a contained value
 
         }
 
@@ -151,10 +151,7 @@ namespace WinForm01
                     break;
 
                 case "√":
-                    if (aSign != null)//find a solution for the case
-                        firstValue = Math.Sqrt(firstValue);
-                    else
-                        firstValue = Math.Sqrt(secondValue);
+                    firstValue = (aSign != null) ? Math.Sqrt(firstValue) : Math.Sqrt(secondValue); //find a solution for the case
                     break;
 
                 default:
