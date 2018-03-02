@@ -23,13 +23,17 @@ namespace WinForm01
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-        }
+            resultField.Select(); // sets focus into a textbox on app's startup
+            resultField.Select(resultField.Text.Length, 0); // makes a contained value not being highlighted and puts a cursor in the beginning of the value
+    }
 
         // input values with buttons
 
         /*        
-        input (buttons + keyboard + copy/paste events) cases:
+        
+            separate handler for hotkeys (ctrl+v, c, etc.)
+            
+            input (buttons + keyboard + copy/paste events) cases:
 
         valid ones:
           - single value
@@ -71,11 +75,9 @@ namespace WinForm01
                 Double.TryParse(ValueInput(aButton), out yValue); // retrieves equasion's 2nd value
             }
             ResultFieldFocus();
-            resultField.SelectionStart = resultField.Text.Length; // puts a cursor in the end of a contained value
-
         }
 
-        // definition of math operation
+        // definition of math operation + computation of an equasion (if a  MathOpButton was pressed instead of EqualsButton)
         private void MathOpButtonClick(object sender, EventArgs e)
         {
             resultField.Clear();
@@ -109,12 +111,27 @@ namespace WinForm01
             ResultFieldFocus();
         }
 
+        // keyboard input handler
+        private void Form1_PressedKey(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9)
+            {
+                if (e.KeyCode < Keys.NumPad0 || e.KeyCode > Keys.NumPad9)
+                {
+                    if (e.KeyCode != Keys.Back || e.KeyCode != Keys.Divide || e.KeyCode != Keys.Multiply || e.KeyCode != Keys.Add || e.KeyCode != Keys.Shift)
+                    {
+                        e.SuppressKeyPress = true;
+                    }
+                }
+            }
+        }
+
         // helper functions
 
         private void ResultFieldFocus()
         {
             resultField.Focus(); // return focus into the input field
-            resultField.SelectionLength = 0; // set the cursor in the end of the text field
+            resultField.Select(resultField.Text.Length, 0); // makes a contained value not being highlighted and  puts a cursor in the beginning of the value            
         }
 
         // inserts a value where the cursor is placed
@@ -163,6 +180,3 @@ namespace WinForm01
         }
     }
 }
-
-
-

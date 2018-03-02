@@ -92,7 +92,7 @@ namespace WinForm01
             this.buttonC.Location = new System.Drawing.Point(214, 86);
             this.buttonC.Name = "buttonC";
             this.buttonC.Size = new System.Drawing.Size(45, 45);
-            this.buttonC.TabIndex = 0;
+            this.buttonC.TabIndex = 15;
             this.buttonC.Text = "C";
             this.buttonC.UseVisualStyleBackColor = true;
             this.buttonC.Click += new System.EventHandler(this.C_ButtonClick);
@@ -254,7 +254,7 @@ namespace WinForm01
             // 
             // resultField
             // 
-            this.resultField.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.resultField.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.resultField.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.resultField.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -278,14 +278,14 @@ namespace WinForm01
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(2, 62);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(265, 21);
             this.label1.TabIndex = 22;
-            this.label1.Text = "Please enter an equation and press Enter or =";
+            this.label1.Text = "Please enter an equation and press = or Enter";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
@@ -316,6 +316,7 @@ namespace WinForm01
             this.Controls.Add(this.buttonRoot);
             this.Controls.Add(this.buttonDivide);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.ShowIcon = false;
@@ -324,6 +325,7 @@ namespace WinForm01
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_PressedKey);
 
         }
 
